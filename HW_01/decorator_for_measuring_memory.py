@@ -14,10 +14,10 @@ def used_memory_deco(func):
         # function call
         result = func(*args, **kwargs)
         # store displaying the memory
-        list_memory_data = tracemalloc.get_traced_memory()
+        memory_start, memory_end = tracemalloc.get_traced_memory()
         # count of memory used
-        used_memory = list_memory_data[1] - list_memory_data[0]
-        print(f"The function: {func.__name__} consumes {used_memory} bytes of memory")
+        used_memory = (memory_end - memory_start) / 1000
+        print(f"The function: {func.__name__} consumes {used_memory} Kb of memory")
         tracemalloc.stop()
         return result
 
