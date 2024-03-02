@@ -50,8 +50,11 @@ def count_average_value_students():
 @app.route("/get-random-password")
 def get_random_password():
     length = random.randint(10, 20)
-    all_characters = string.ascii_letters + string.digits + string.punctuation
-    password = "".join(random.choice(all_characters) for _ in range(length))
+    all_characters_list = [string.ascii_lowercase, string.ascii_uppercase, string.digits, string.punctuation]
+    all_characters_str = string.ascii_letters + string.digits + string.punctuation
+    random_four_chars_of_each_type = [random.choice(type_of_chars) for type_of_chars in all_characters_list]
+    random_chars = random.choices(all_characters_str, k=(length - 4))
+    password = "".join(random_chars + random_four_chars_of_each_type)
     content = f"<p> Your random password is  {password} <p/>"
     return HTML_TEMPLATE % content
 
