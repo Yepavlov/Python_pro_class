@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 pandas = '*'
 flask = '*'
+faker = '*'
+requests = "*"
+webargs = "*"
 
 [dev-packages]
 faker = '*'
