@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tracks Information</title>
+</head>
+<body>
+    <h1>All Tracks Information</h1>
+    <table border="1">
+        <tr>
+            <th>TrackId</th>
+            <th>TrackName</th>
+            <th>Composer</th>
+            <th>Milliseconds</th>
+            <th>Bytes</th>
+            <th>UnitPrice</th>
+            <th>NumberOfCustomers</th>
+            <th>TotalSales</th>
+            <th>GenreName</th>
+            <th>MediaTypeName</th>
+            <th>TitleName</th>
+            <th>ArtistName</th>
+            <th>PlaylistName</th>
+        </tr>
+        {% for track_info in all_tracks_info %}
+        <tr>
+            <td>{{ track_info[0] }}</td>
+            <td>{{ track_info[1] }}</td>
+            <td>{{ track_info[2] }}</td>
+            <td>{{ track_info[3] }}</td>
+            <td>{{ track_info[4] }}</td>
+            <td>{{ track_info[5] }}</td>
+            <td>{{ track_info[6] }}</td>
+            <td>{{ track_info[7] }}</td>
+            <td>{{ track_info[8] }}</td>
+            <td>{{ track_info[9] }}</td>
+            <td>{{ track_info[10] }}</td>
+            <td>{{ track_info[11] }}</td>
+            <td>{{ track_info[12] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
