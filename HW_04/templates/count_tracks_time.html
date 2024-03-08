@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums Information</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Albums Information</h1>
+    <table>
+        <tr>
+            <th>AlbumId</th>
+            <th>AlbumTitle</th>
+            <th>TotalHours</th>
+        </tr>
+        {% for album_info in album_infos %}
+        <tr>
+            <td>{{ album_info[0] }}</td>
+            <td>{{ album_info[1] }}</td>
+            <td>{{ album_info[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
