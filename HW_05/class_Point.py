@@ -1,7 +1,6 @@
-from typing import Union
 
 
 class Point:
-    def __init__(self, x: Union[int, float], y: Union[int, float]):
+    def __init__(self, x: int | float, y: int | float):
         self.x = x
         self.y = y
