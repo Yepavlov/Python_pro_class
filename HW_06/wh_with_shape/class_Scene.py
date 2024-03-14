@@ -1,18 +1,12 @@
-from typing import List, Union
+from typing import Union, List
 
-from HW_06.wh_with_shape.class_Circle import Circle
-from HW_06.wh_with_shape.class_Parallelogram import Parallelogram
-from HW_06.wh_with_shape.class_Rectangle import Rectangle
-from HW_06.wh_with_shape.class_Triangle import Triangle
-
-
-class Shape:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def square(self):
-        return 0
+from HW_06.wh_with_shape.class_Figures import (
+    Triangle,
+    Circle,
+    Parallelogram,
+    Rectangle,
+    Point,
+)
 
 
 class Scene:
@@ -54,6 +48,14 @@ def main():
     scene = Scene()
     scene.add_figure([t, c, r, p])
     print(scene.total_square())
+    print(
+        "---------------------------------------HW_06_task_2---------------------------------------------"
+    )
+    point_out = Point(10, 7)
+    point_in = Point(2, 3)
+    circle = Circle(3, 4, 6)
+    print(point_out in circle)
+    print(point_in in circle)
 
 
 if __name__ == "__main__":
