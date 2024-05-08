@@ -10,14 +10,9 @@ class TestFibonacci(unittest.TestCase):
     def test_fibonacci_computation(self):
         self.assertEqual(self.fibonacci(0), 0)
         self.assertEqual(self.fibonacci(1), 1)
-        self.assertEqual(self.fibonacci(2), 1)
-        self.assertEqual(self.fibonacci(3), 2)
-        self.assertEqual(self.fibonacci(4), 3)
-        self.assertEqual(self.fibonacci(5), 5)
-        self.assertEqual(self.fibonacci(6), 8)
         self.assertEqual(self.fibonacci(7), 13)
-        self.assertEqual(self.fibonacci(8), 21)
         self.assertEqual(self.fibonacci(9), 34)
+        self.assertEqual(self.fibonacci(350), 6254449428820551641549772190170184190608177514674331726439961915653414425)
 
     def test_fibonacci_input_negative_int(self):
         with self.assertRaises(ValueError):

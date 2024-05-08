@@ -54,73 +54,37 @@ class TestFormattedName(unittest.TestCase):
                                         middle_name=""), " ")
 
     def test_formatted_name_with_first_name_none(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name=None, last_name="Jons", middle_name="Junior")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_last_name_none(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name="Roy", last_name=None, middle_name="Junior")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_middle_name_none(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name="Roy", last_name="Jons", middle_name=None)
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_without_first_name(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(last_name="Jons", middle_name="Junior")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_without_last_name(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name="Roy", middle_name="Junior")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_first_name_integers(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name=123, last_name="jons", middle_name="")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_last_name_integers(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name="roy", last_name=123, middle_name="")
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_middle_name_integers(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name="roy", last_name="jons", middle_name=123)
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
 
     def test_formatted_name_with_all_integers(self):
-        try:
+        with self.assertRaises(TypeError):
             formatted_name(first_name=123, last_name=456, middle_name=789)
-        except TypeError:
-            self.assertTrue(True)
-        else:
-            self.fail("Expected TypeError but no exception was raised")
