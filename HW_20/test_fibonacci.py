@@ -12,6 +12,8 @@ class TestFibonacci(unittest.TestCase):
         self.assertEqual(self.fibonacci(1), 1)
         self.assertEqual(self.fibonacci(7), 13)
         self.assertEqual(self.fibonacci(9), 34)
+
+    def test_fibonacci_computation_huge_number(self):
         self.assertEqual(self.fibonacci(350), 6254449428820551641549772190170184190608177514674331726439961915653414425)
 
     def test_fibonacci_input_negative_int(self):
