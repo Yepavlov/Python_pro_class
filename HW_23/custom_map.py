@@ -9,10 +9,9 @@ class CustomMap:
         def __next__(self):
             if self.index == len(self.some_dict):
                 raise StopIteration
-            key = list(self.some_dict.keys())[self.index]
-            value = list(self.some_dict.values())[self.index]
+            records = tuple(self.some_dict.items())[self.index]
             self.index += 1
-            return self.func1(key), self.func2(value)
+            return self.func1(records[0]), self.func2(records[1])
 
     def __init__(self, some_dict: dict, func1, func2):
         self.some_dict = some_dict
