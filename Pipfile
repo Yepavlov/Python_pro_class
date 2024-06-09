@@ -9,6 +9,7 @@ flask = '*'
 faker = '*'
 requests = "*"
 webargs = "*"
+nltk = "*"
 
 [dev-packages]
 faker = '*'
